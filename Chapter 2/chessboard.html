@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chessboard</title>
+  </head>
+  <body>
+    <p>Check the console</p>
+    <script>
+      let board = '';
+      function chessboard(size) {
+        for (let i = 0; i < size; i++) {
+          // The double for loop is a go-to when dealing with both rows and columns
+          // One loop deals with columns (the i=0 loop), while another deals with rows (the j=0 loop)
+          for (let j = 0; j < size; j++) {
+            if ((i+j) % 2 === 0) {
+              board += ' ';
+            }
+            else {
+              board += '#';
+            }
+          }
+          board += '\n';
+        }
+        console.log(board);
+      }
+      chessboard(8);
+      chessboard(16);
+      chessboard(24);
+    </script>
+  </body>
+</html>

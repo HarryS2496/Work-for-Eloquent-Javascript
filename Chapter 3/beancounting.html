@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bean Counting</title>
+  </head>
+  <body>
+    <p>Check the console</p>
+    <script>
+      function countBs(string) {
+        return countChar(string, 'B');
+      }
+      function countChar(string, ch) {
+        let count = 0;
+        // Goes through the sentence in the string
+        for (let i = 0; i < string.length; i++) {
+          if (string[i] == ch) {
+            // Adds up when specified ch is detected
+            count += 1;
+          }
+        }
+        return count;
+      }
+      console.log(countBs('BBQ Sauce'));
+      console.log(countChar('Goofy ahh functions', 'o'));
+      console.log(countChar('Five Nights at Freddys, more like Five Nights at Middies', 'i'));
+    </script>
+  </body>
+</html>
