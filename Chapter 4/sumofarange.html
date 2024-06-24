@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sum of a Range</title>
-  </head>
-  <body>
-    <p>Check the console</p>
-    <script>
-      
-    </script>
-  </body>
+
+<head>
+  <title>Sum of a Range</title>
+</head>
+
+<body>
+  <p>Check the console</p>
+  <script>
+    // Maybe change if statements to ternary operators this time
+    // If no step function is passed and start is less than or equal to end,
+    // then step = 1, else step = -1.
+    function range(start, end, step = start <= end ? 1 : -1) {
+      let result = [];
+      // Loop iterates up for a positive step value, iterates down for a negative step value
+      for (let i = start; step >= 0 ? i <= end : i >= end; i += step) {
+        result.push(i);
+      }
+      return result;
+    }
+
+    // Adds up all the numbers in an array
+    function sum(numbers) {
+      let resultSum = 0;
+      for (let num of numbers) {
+        resultSum += num;
+      }
+      return resultSum;
+    }
+
+    console.log(range(1, 10));
+    console.log(sum(range(1, 10)));
+
+    console.log(range(1, 10, 2));
+    console.log(sum(range(1, 10, 2)));
+
+    console.log(range(5, 2, -1));
+    console.log(sum(range(5, 2, -1)));
+
+    console.log(range(0, 100, 5));
+    console.log(sum(range(0, 100, 5)));
+    
+    console.log(range(50, -50, -10));
+    console.log(sum(range(50, -50, -10)));
+  </script>
+</body>
+
 </html>
