@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>To Do List</title>
+</head>
+
+<body>
+  <p>Check the console</p>
+  <script>
+    let todoList = [];
+    let buyingList = [];
+    function remember(task) {
+      todoList.push(task);
+    }
+    function getTask() {
+      return todoList.shift();
+    }
+    function rememberUrgently(task) {
+      todoList.unshift(task);
+    }
+
+    todoList = [
+      'do yoga stretches',
+      'finish Chapter 5 of Eloquent Javascript',
+      'do at least one chapter of the SuperSimpleDev Javascript tutorial',
+      'transfer computer data over to PC (preferrably with USB drive)',
+      'catch up on Mushoku Tensei',
+      'deposit coins in bank',
+      'finish Dragon Quarter',
+    ];
+    todoList.sort();
+
+    remember('buy webcam');
+    remember('buy headset');
+    rememberUrgently('buy milk');
+    getTask(todoList);
+
+    console.log(todoList);
+  </script>
+</body>
+
+</html>
