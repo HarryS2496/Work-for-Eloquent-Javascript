@@ -2,16 +2,17 @@
 <html>
 
 <head>
-  <title>Alist</title>
+  <title>A list</title>
 </head>
 
 <body>
   <p>Check the console</p>
-  <script>
+  <script> 
+
     function arrayToList(array) {
       let list = null;
       for (let i = array.length - 1; i >= 0; i--) {
-        list = { value: array[i], rest: list };
+        list = { value: array[i], rest: list }; // {value: 10, rest: {value: 20}}
       }
       return list;
     }

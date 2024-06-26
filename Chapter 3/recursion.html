@@ -6,22 +6,20 @@
   <body>
     <p>Check the console</p>
     <script>
-      let result = true;
       function isEven(number) {
         if (number < 0) {
           number *= -1;
         }
         if (number === 0) {
-          result = true;
+          return true;
         }
         else if (number === 1) {
-          result = false;
+          return false;
         }
         else {
           number -= 2;
-          isEven(number);
+          return isEven(number);
         }
-        return result;
       }
       console.log(isEven(50)); // must return true
       console.log(isEven(75)); // must return false, returns true without recursion
