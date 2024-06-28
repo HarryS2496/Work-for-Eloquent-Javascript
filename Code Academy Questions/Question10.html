@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Question 10</title>
+</head>
+
+<body>
+  <p>Return number of vowels in a string</p>
+  <script>
+    function countVowels(string) {
+      let count = 0;
+      const vowels = ['a', 'e', 'i', 'o', 'u'];
+      for (let char of string) {
+        if (vowels.includes(char)) {
+          count++;
+        }
+      }
+      return count;
+    }
+    console.log(countVowels('BBQ Sauce'));
+    console.log(countVowels('Goofy ahh functions'));
+    console.log(countVowels('Five Nights at Freddys, more like Five Nights at Middies'));
+  </script>
+</body>
+
+</html>

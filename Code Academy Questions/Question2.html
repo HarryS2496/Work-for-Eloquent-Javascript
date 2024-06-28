@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Question 2</title>
+</head>
+
+<body>
+  <p>Print a table containing multiplication tables</p>
+  <script>
+    let result;
+    function printTimeTables(number) {
+      for (let i = 0; i <= number; i++) {
+        let row = '';
+        for (let j = 0; j <= number; j++) {
+          row += (i * j) + ' ';
+        }
+        console.log(row);
+      }
+    }
+    printTimeTables(10);
+  </script>
+</body>
+
+</html>

@@ -27,13 +27,14 @@
       'transfer computer data over to PC (preferrably with USB drive)',
       'catch up on Mushoku Tensei',
       'deposit coins in bank',
-      'finish Dragon Quarter',
     ];
     todoList.sort();
 
     remember('buy webcam');
     remember('buy headset');
     rememberUrgently('buy milk');
+    getTask(todoList);
+    rememberUrgently('finish Breath of Fire: Dragon Quarter');
     getTask(todoList);
 
     console.log(todoList);

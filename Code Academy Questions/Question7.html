@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Question 7</title>
+</head>
+
+<body>
+  <p>Filter out negative numbers</p>
+  <script>
+    let array1 = [1, -92, 30, -104, 51, 16, -27, 58, -79, 510];
+    let array2 = [5, 70, -8, 6, -1, 23, -41];
+    let array3 = [1, 20, 3, 40, 5, 60, 7, 80, 9, 1];
+    function filterNegatives(numbers) {
+      let result = [];
+      for (let i = 0; i <= numbers.length; i++) {
+        if (numbers[i] >= 0) {
+          result.push(numbers[i]);
+        }
+      }
+      return result;
+    }
+    console.log(filterNegatives(array1));
+    console.log(filterNegatives(array2));
+    console.log(filterNegatives(array3));
+  </script>
+</body>
+
+</html>

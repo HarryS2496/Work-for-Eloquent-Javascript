@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Question 4</title>
+</head>
+
+<body>
+  <p>Sum of numbers in array</p>
+  <script>
+    let array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let array2 = [5, 7, 8, 6, 10, 23, 41];
+    let array3 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+    function sum(numbers) {
+      let resultSum = 0;
+      for (let num of numbers) {
+        resultSum += num;
+      }
+      return resultSum;
+    }
+    console.log(sum(array1));
+    console.log(sum(array2));
+    console.log(sum(array3));
+  </script>
+</body>
+
+</html>
