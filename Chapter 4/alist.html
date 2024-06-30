@@ -7,8 +7,57 @@
 
 <body>
   <p>Check the console</p>
-  <script> 
+  <script>
+    // Converts array to list (object)
+    function arrayToList(array) {
+      let list = null; 
+      for (let i = array.length - 1; i >= 0; i--) {
+        // Goes from the end of the array to the beginning 
+        list = { value: array[i], rest: list }; 
+        // List node format
+      }
+      return list; 
+    }
 
+    // Converts list (object) to array
+    function listToArray(list) {
+      let array = []; 
+      for (let node = list; node; node = node.rest) { 
+        /* 
+        let node = list; -> Initialized the node variable with list as a starting value
+        node; -> Condition that is checked before each iteration. As long as node is truthy (not null/undefined), the loop continues.
+        node.rest -> The rest of the list after the current node. This is the equivalent of i++, for it updates the current node to the next.
+        */
+        array.push(node.value); // Add each node's value to the array
+      }
+      return array;
+    }
+
+    // Prepends an element to the front of a list
+    function prepend(element, list) {
+      return { value: element, rest: list }; 
+      // Create a new list node with the element and the existing list as the rest
+    }
+
+    // Gets the nth element in a list
+    function nth(list, n) {
+      if (!list) {
+        return undefined;
+      } 
+      else if (n === 0) {
+        return list.value;
+        // Returns value of node if n is 0
+      } 
+      else { 
+        return nth(list.rest, n - 1);
+        // Recursively calls nth on the rest of the list, with n decreased by 1
+      }
+    }
+
+    console.log(arrayToList([10, 20]));
+    console.log(listToArray(arrayToList([10, 20, 30])));
+    console.log(prepend(10, prepend(20, null)));
+    console.log(nth(arrayToList([10, 20, 30]), 1));
   </script>
 </body>
 
