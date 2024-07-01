@@ -2,4 +2,4 @@ Codeacademy questions sent by Mithun
 Finish Chapter 5 of Eloquent Javascript
 Either redo alist.html or come up with a proper explanation
 Learn how to actually explain your programming
-Crocoder Exercises in place of Chapter 5
+Crocoder Exercises

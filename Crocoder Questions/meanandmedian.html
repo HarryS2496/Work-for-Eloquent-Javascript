@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mean and Median</title>
+</head>
+
+<body>
+  <p>Sum of positive elements</p>
+  <script>
+    const input = [12, 46, 32, 64]; // Mean = 38.5, Median = 39
+
+    // Mean function
+    function calculateMean(numbers) {
+      let meanResult = 0;
+      for (let i = 0; i < numbers.length; i++) {
+        meanResult += numbers[i];
+      }
+      meanResult /= numbers.length;
+      return meanResult;
+    }
+
+    // Median function
+    function calculateMedian(numbers) {
+      numbers.sort((a,b) => a - b);
+    }
+
+    console.log(calculateMean(input));
+  </script>
+</body>
+
+</html>

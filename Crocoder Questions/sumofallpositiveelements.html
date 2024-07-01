@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sum of all positive elements</title>
+</head>
+
+<body>
+  <p>Sum of positive elements</p>
+  <script>
+    const input = [1, -4, 12, 0, -3, 29, -150];
+    function addPositiveSum(numbers) {
+      let resultSum = 0;
+      for (let num of numbers) {
+        if (num > 0) {
+          resultSum += num;
+        }
+      }
+      return resultSum;
+    }
+    console.log(addPositiveSum(input));
+  </script>
+</body>
+
+</html>
