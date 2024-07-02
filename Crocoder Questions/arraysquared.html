@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Array Squared</title>
+</head>
+
+<body>
+  <p>Array Squared</p>
+  <script>
+    const input = [1, 2, 3, 4, 5];
+    function squareArray(numbers) {
+      let newInput = [];
+      for (let i = 0; i < numbers.length; i++) {
+        numberSquared = Math.pow(numbers[i], 2);
+        newInput[i] = numberSquared;
+      }
+      return newInput;
+    }
+
+    console.log(squareArray(input));
+
+    console.log(
+      input.map(function (num) {
+        return Math.pow(num, 2);
+      })
+    );
+  </script>
+</body>
+
+</html>
