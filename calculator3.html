@@ -7,15 +7,15 @@
   <body>
     <p>
       <button onclick="
-        updateCalculation('1');
+        updateCalculation(1);
       ">1</button>
 
       <button onclick="
-        updateCalculation('2');
+        updateCalculation(2);
       ">2</button>
 
       <button onclick="
-        updateCalculation('3');
+        updateCalculation(3);
       ">3</button>
 
       <button onclick="
@@ -25,15 +25,15 @@
 
     <p>
       <button onclick="
-        updateCalculation('4');
+        updateCalculation(4);
       ">4</button>
 
       <button onclick="
-        updateCalculation('5');
+        updateCalculation(5);
       ">5</button>
 
       <button onclick="
-        updateCalculation('6');
+        updateCalculation(6);
       ">6</button>
 
       <button onclick="
@@ -43,15 +43,15 @@
 
     <p>
       <button onclick="
-        updateCalculation('7');
+        updateCalculation(7);
       ">7</button>
 
       <button onclick="
-        updateCalculation('8');
+        updateCalculation(8);
       ">8</button>
 
       <button onclick="
-        updateCalculation('9');
+        updateCalculation(9);
       ">9</button>
 
       <button onclick="
@@ -61,7 +61,7 @@
 
     <p>
       <button onclick="
-        updateCalculation('0');
+        updateCalculation(0);
       ">0</button>
 
       <button onclick="
@@ -84,22 +84,28 @@
     </p>
 
     <script>
-      let calculation = '';
+      let num1 = null, num2 = null;
+      let result = 0;
+      let operator = null;
       function updateCalculation(value) {
-        calculation += value;
-        console.log(calculation);
+        if (value === ' + ' || value === ' - ' || value === ' * ' || value === ' / ') {
+          operator = value;
+        }
+        else if (num1 !== null) {
+          num2 = value;
+        }
+        else {
+          num1 = value;
+        }
+        console.log(num1, operator, num2);
+        return num1, operator, num2;
       }
       function calculateResult() {
         try { // does the calculation by default
-          const result = new Function('return ' + calculation)();
-          /*
-          Creates a new function whose value will be equal to a variable. The function looks like this:
-          Function () {
-            return calculation();
+          if (operator === ' + ') {
+            result = num1 + num2;
+            console.log(result);
           }
-          */
-          calculation = result.toString(); // Converts expression back to a string
-          console.log(calculation);
         }
         catch (error) { // executes if exception is caught in try (calculation invalid)
           console.error('Error in calculation:', error);
