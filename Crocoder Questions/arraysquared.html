@@ -13,18 +13,35 @@
       let newInput = [];
       for (let i = 0; i < numbers.length; i++) {
         numberSquared = Math.pow(numbers[i], 2);
-        newInput[i] = numberSquared;
+        newInput.push[numberSquared];
       }
       return newInput;
     }
 
     console.log(squareArray(input));
 
-    console.log(
-      input.map(function (num) {
+    const squaredInput = input.map(
+      function (num) {
         return Math.pow(num, 2);
-      })
+      }
     );
+
+    const subtractedInput = input.map(
+      function (num) {
+        return num - 1;
+      }
+    );
+
+    const filteredInput = input.filter(
+      function (num) {
+        return num % 2 === 0;
+      }
+    );
+
+    console.log(input);
+    console.log(squaredInput);
+    console.log(subtractedInput);
+    console.log(filteredInput);
   </script>
 </body>
 

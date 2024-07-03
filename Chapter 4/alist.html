@@ -38,6 +38,9 @@
       return { value: element, rest: list }; 
       // Create a new list node with the element and the existing list as the rest
     }
+    let list1 = { value: 20, rest: {value: 40, rest: null}};
+    // prepend(60, list1)
+    // {value: 60, rest: {value: 20, rest: {value: 40, rest: null}}}
 
     // Gets the nth element in a list
     function nth(list, n) {
@@ -54,10 +57,12 @@
       }
     }
 
-    console.log(arrayToList([10, 20]));
+    console.log(arrayToList([10, 20, 30]));
     console.log(listToArray(arrayToList([10, 20, 30])));
     console.log(prepend(10, prepend(20, null)));
     console.log(nth(arrayToList([10, 20, 30]), 1));
+    console.log(nth(arrayToList([10, 20, 30]), 2));
+    console.log(nth(arrayToList([10, 20, 30]), 3));
   </script>
 </body>
 

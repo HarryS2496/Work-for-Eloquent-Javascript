@@ -11,10 +11,15 @@
     let array1 = [1, 92, 30, 104, 51, 16, 27, 58, 79, 510];
     let array2 = [5, 70, 8, 6, 1, 23, 41];
     let array3 = [1, 20, 3, 40, 5, 60, 7, 80, 9, 1];
-    function sortNumber(a,b) {
+    function sortNumberAscend(a, b) {
+      console.log(a, b);
       return a - b;
     }
-    console.log(array1.sort(sortNumber));
+    function sortNumberDescend(a, b) {
+      return b - a;
+    }
+
+    console.log(array1.sort(sortNumberAscend));
     console.log(array2.sort(sortNumber));
     console.log(array3.sort(sortNumber));
   </script>

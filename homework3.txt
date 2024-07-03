@@ -1,3 +1,5 @@
 For calculator3.html, add other operations
 Make the calculator handle multi digit numbers
-Continue Crocoder Questions
+Continue Crocoder Questions with map, filter, and reduce
+Reread Chapter 5 of Eloquent Javascript
+Chapter 5 Exercises
