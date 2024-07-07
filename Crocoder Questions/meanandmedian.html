@@ -6,26 +6,40 @@
 </head>
 
 <body>
-  <p>Sum of positive elements</p>
+  <p>Mean and median</p>
   <script>
     const input = [12, 46, 32, 64]; // Mean = 38.5, Median = 39
 
-    // Mean function
-    function calculateMean(numbers) {
-      let meanResult = 0;
-      for (let i = 0; i < numbers.length; i++) {
-        meanResult += numbers[i];
-      }
-      meanResult /= numbers.length;
-      return meanResult;
-    }
+    input.sort((a, b) => a - b); // sorts from least to greatest
 
-    // Median function
-    function calculateMedian(numbers) {
-      numbers.sort((a,b) => a - b);
-    }
+    const arrayMeanAndMedian = input.reduce(
+      (accumulator, currentValue, initialValue, array) => {
+        // Process for finding the mean
+        accumulator.mean += currentValue / array.length;
 
-    console.log(calculateMean(input));
+        if (array.length % 2 === 0) {
+          // Finds the median if the input has an even amount of elements
+          if (initialValue === (array.length / 2 - 1)) {
+            accumulator.median += currentValue; // Middle left number
+          }
+          else if (initialValue === array.length / 2) {
+            accumulator.median += currentValue; // Middle right number
+            accumulator.median /= 2; // Divides the sum of both middle numbers by 2
+          }
+        }
+        else {
+          // Finds the median if the input has an odd amount of elements
+          if (initialValue === ((array.length - 1) / 2)) {
+            accumulator.median = currentValue;
+          }
+        }
+        return accumulator;
+      },
+      {mean: 0, median: 0}
+    );
+
+    console.log(input);
+    console.log(arrayMeanAndMedian);
   </script>
 </body>
 
