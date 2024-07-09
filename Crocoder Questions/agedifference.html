@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Age Difference</title>
+</head>
+
+<body>
+  <p>Age Difference</p>
+  <script>
+    const input = [
+      {
+        name: "John",
+        age: 13,
+      },
+      {
+        name: "Mark",
+        age: 56,
+      },
+      {
+        name: "Rachel",
+        age: 45,
+      },
+      {
+        name: "Nate",
+        age: 67,
+      },
+      {
+        name: "Jennifer",
+        age: 65,
+      },
+    ];
+
+    const ageDifference = input.map((person) => person.age); // Searches through all ages with map
+
+    console.log(Math.min(...ageDifference),
+      Math.max(...ageDifference),
+      Math.max(...ageDifference) - Math.min(...ageDifference));
+    // Ellipses are used to spread mapped values
+  </script>
+</body>
+
+</html>

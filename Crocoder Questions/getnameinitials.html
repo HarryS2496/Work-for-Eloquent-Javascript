@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Get Name Initials</title>
+</head>
+
+<body>
+  <p>Get name initials</p>
+  <script>
+    const input = "George Raymond Richard Martin";
+
+    const initializedName = input
+    .split(' ')
+    .map(word => word[0])
+    .join('')
+    ;
+
+    console.log(initializedName);
+  </script>
+</body>
+
+</html>
