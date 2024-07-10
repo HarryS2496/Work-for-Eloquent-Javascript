@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>High Performing Students</title>
+</head>
+
+<body>
+  <p>High Performing Students</p>
+  <script>
+    const students = [
+      { name: "Alice", scores: [90, 85, 92] },
+      { name: "Bob", scores: [75, 80, 85] },
+      { name: "Charlie", scores: [90, 95, 85] },
+      { name: "Jack", scores: [100, 100, 100] }
+    ];
+
+    // Calculates the average of test scores
+    const studentAverage = students.map(student => {
+      const sum = student.scores.reduce((accumulator, score) => accumulator + score);
+      return {name: student.name, average: sum / student.scores.length};
+    }
+    );
+
+    // Filter out the students that didn't average above 90
+    const highPerformers = studentAverage.filter(student => student.average > 90);
+
+    console.log(studentAverage);
+    console.log(highPerformers);
+  </script>
+</body>
+
+</html>

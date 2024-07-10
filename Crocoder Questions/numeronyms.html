@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Numeronyms</title>
+</head>
+
+<body>
+  <p>Numeronyms</p>
+  <script>
+    const input = "Every developer likes to mix kubernetes and javascript";
+    const createNumeronym = (word) => word[0] + (word.length - 2) + word[word.length - 1];
+    // Returns the first letter of a word, the length of the word minus 2, and the last letter
+
+    const newInput = input
+    .split(' ')
+    .map(function (word) {
+      if (word.length >= 4) { 
+        return createNumeronym(word);
+        // Only returns words with 4 letters or more
+      }
+      return word;
+    })
+    .join(' ');
+
+    console.log(input);
+    console.log(newInput);
+  </script>
+</body>
+
+</html>

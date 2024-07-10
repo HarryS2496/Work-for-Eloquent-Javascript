@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Array of Arrays</title>
+</head>
+
+<body>
+  <p>Array of Arrays</p>
+  <script>
+    const input = [
+      ["a", "b", "c"],
+      ["c", "d", "f"],
+      ["d", "f", "g"],
+    ];
+    const distinctElements = input.flat().reduce((accumulator, currentValue) => {
+      // Flattens multi-array into a single array before reduce shenanigans
+      if (accumulator[currentValue] += 1) {
+        accumulator[currentValue] += 1;
+        // Increments if currentValue already exists in accumulator (the input)
+      }
+      else {
+        accumulator[currentValue] = 1;
+        // Defaults to 1 for any value that shows up once. All numbers would be NaN without this check.
+      }
+      return accumulator;
+    }, {}
+    );
+
+    console.log(distinctElements);
+  </script>
+</body>
+
+</html>

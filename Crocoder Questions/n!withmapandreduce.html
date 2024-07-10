@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>N! (Map and Reduce)</title>
+</head>
+
+<body>
+  <p>N! (Map and Reduce)</p>
+  <script>
+    const input = 6;
+
+    const array = new Array(input)
+      .fill(null)
+    /*
+    [null, null, null, null, null, null]
+    Amount of elements in array depends on what number input is
+    */
+      .map((currentValue, initialValue) => initialValue + 1) 
+    // Maps each element of the array to index + 1 for accurate math
+      .reduce((accumulator, currentValue) => accumulator * currentValue);
+    // Calculates the factorial, returning the acumulator's new value
+
+    console.log(array);
+  </script>
+</body>
+
+</html>
