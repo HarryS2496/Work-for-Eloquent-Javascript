@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HR VS IT</title>
+</head>
+
+<body>
+  <p>HR VS IT</p>
+  <script>
+    const employees = [
+      { name: "John", salary: 50000, department: "IT" },
+      { name: "Jane", salary: 60000, department: "HR" },
+      { name: "Bob", salary: 55000, department: "IT" },
+      { name: "Sophie", salary: 75000, department: "HR" },
+      { name: "Mike", salary: 65000, department: "IT" },
+      { name: "Emily", salary: 80000, department: "HR" },
+      { name: "David", salary: 70000, department: "IT" },
+    ];
+
+    // Pretty similar deal to highpriced.html
+    // 1. Organize the employees into their respective departments
+
+    const sortByDepartment = employees.reduce((accumulator, employee) => {
+      const department = employee.department;
+      if (!accumulator[department]) {
+        accumulator[department] = [];
+      }
+      accumulator[department].push(employee);
+      return accumulator;
+    }, {}
+    );
+
+    /*
+      HR array
+      { name: "employee 1", salary: 50000, department: "HR" },...
+
+      IT array
+      { name: "employee 2", salary: 60000, department: "IT" },...
+    */
+
+    // 2. Calculate the average price for each department
+
+    const averageSalary = Object.keys(sortByDepartment).map(department => {
+      const sum = sortByDepartment[department].reduce((accumulator, employee) => accumulator + employee.salary, 0);
+      return { department: department, average: sum / sortByDepartment[department].length };
+    });
+
+    /* 
+    { department: 'HR', average: 71666 }
+     */
+
+    // 3. Filter out the categories that don't have an average price above 50
+
+    const highSalaryDepartment = averageSalary.filter(department => department.average > 65000);
+
+  </script>
+</body>
+
+</html>
