@@ -17,9 +17,50 @@
       { name: "Product 6", price: 70, category: "Electronics" },
       { name: "Product 7", price: 80, category: "Clothes" },
       { name: "Product 8", price: 90, category: "Electronics" },
+      { name: "Product 9", price: 24, category: "Dairy" },
+      { name: "Product 10", price: 17, category: "Dairy" }
     ];
 
-    
+    // 1. Organize the products into their respective categories
+
+    const sortByCategory = products.reduce((accumulator, product) => {
+      const category = product.category;
+      if (!accumulator[category]) {
+        accumulator[category] = [];
+      }
+      accumulator[category].push(product);
+      return accumulator;
+    }, {}
+  );
+
+    /*
+      Electronics array
+      { name: "Product 1", price: 20, category: "Electronics" },...
+
+      Clothes array
+      { name: "Product 2", price: 30, category: "Clothes" },...
+    */
+
+    // 2. Calculate the average price for each category
+
+    const averagePrice = Object.keys(sortByCategory).map(category => {
+      const sum = sortByCategory[category].reduce((accumulator, product) => accumulator + product.price, 0);
+      return {category: category, average: sum / sortByCategory[category].length};
+    });
+
+    /* 
+    { category: 'Clothes', average: 55 },
+    { category: 'Electronics', average: 55 } 
+     */
+
+    // 3. Filter out the categories that don't have an average price above 50
+
+    const highPriceCategory = averagePrice.filter(category => category.average > 50);
+
+    console.log(sortByCategory);
+    console.log(averagePrice);
+    console.log(highPriceCategory);
+
   </script>
 </body>
 

@@ -17,7 +17,7 @@
 
     // Calculates the average of test scores
     const studentAverage = students.map(student => {
-      const sum = student.scores.reduce((accumulator, score) => accumulator + score);
+      const sum = student.scores.reduce((accumulator, score) => accumulator + score, 0);
       return {name: student.name, average: sum / student.scores.length};
     }
     );

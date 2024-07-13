@@ -1,0 +1,4 @@
+Chapter 5 Exercises
+Do the HR VS IT Exercise on Crocoder
+Work through enough levels of Flexbox Froggy
+Start building your version of Hangman (put in another folder)
