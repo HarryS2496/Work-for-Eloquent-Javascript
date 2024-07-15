@@ -16,6 +16,8 @@
       { name: "Mike", salary: 65000, department: "IT" },
       { name: "Emily", salary: 80000, department: "HR" },
       { name: "David", salary: 70000, department: "IT" },
+      { name: "Bill", salary: 10000, department: "Metro Goldwyn-Mayer" },
+      { name: "Ted", salary: 10000, department: "Metro Goldwyn-Mayer" }
     ];
 
     // Pretty similar deal to highpriced.html
@@ -50,7 +52,8 @@
     { department: 'HR', average: 71666 }
      */
 
-    // 3. Filter out the categories that don't have an average price above 50
+    // 3. Filter out the departments that don't have an average price above 65000
+    // Bill and Ted were added as employees to test this part out, since both HR and IT pass the filter check
 
     const highSalaryDepartment = averageSalary.filter(department => department.average > 65000);
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Flattening</title>
+</head>
+
+<body>
+  <p>Flattening</p>
+  <script>
+    const input = [
+      [1, 2, 3],
+      [4, 5],
+      [6]
+    ];
+    
+    const newInput = input.reduce((acc, current) => acc.concat(current), []);
+    
+    console.log(newInput);
+    console.log(input.flat());
+  </script>
+</body>
+
+</html>
