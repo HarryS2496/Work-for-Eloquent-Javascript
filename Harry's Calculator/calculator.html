@@ -7,8 +7,8 @@
 </head>
 
 <body>
-  <div class="calcColumn">
-    <div class="calcRow">
+  <div class="calculator-container">
+    <div class="calculator-keys">
       <button onclick="
         updateCalculation(1);
       ">1</button>
@@ -26,7 +26,7 @@
       ">+</button>
     </div>
 
-    <div class="calcRow">
+    <div class="calculator-keys">
       <button onclick="
         updateCalculation(4);
       ">4</button>
@@ -44,7 +44,7 @@
       ">-</button>
     </div>
 
-    <div class="calcRow">
+    <div class="calculator-keys">
       <button onclick="
         updateCalculation(7);
       ">7</button>
@@ -62,14 +62,14 @@
       ">*</button>
     </div>
 
-    <div class="calcRow">
-      <button onclick="
-        updateCalculation(0);
-      ">0</button>
-
+    <div class="calculator-keys">
       <button onclick="
         updateCalculation('.');
       ">.</button>
+
+      <button onclick="
+        updateCalculation(0);
+      ">0</button>
 
       <button onclick="
         calculateResult();
@@ -80,7 +80,7 @@
       ">/</button>
     </div>
 
-    <div class="calcRow">
+    <div class="calculator-keys">
       <button onclick="
         clearCalculation();
       ">Clear</button>
