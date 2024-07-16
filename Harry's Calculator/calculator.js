@@ -5,9 +5,11 @@ let result = 0;
 let operator = null;
 let isBuildingNum2 = false;
 function updateCalculation(value) {
-  if (num1 !== null) {
-    operator = value;
-    isBuildingNum2 = true;
+  if (typeof value === 'string' && (value === ' + ' || value === ' - ' || value === ' * ' || value === ' / ')) {
+    if (num1 !== null) {
+      operator = value;
+      isBuildingNum2 = true;
+    }
   }
   else if (isBuildingNum2) {
     if (num2 === null) {
