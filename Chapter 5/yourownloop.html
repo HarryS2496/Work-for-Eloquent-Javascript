@@ -9,14 +9,15 @@
   <p>Your Own Loop</p>
   <script>
     function loop(initialValue, test, update, body) {
+      // In this loop, the value starts at initial value, ends when test(value) returns false, and is iterated by updating the value
       for (let value = initialValue; test(value); value = update(value)) {
+        // calls body to give it the current value
         body(value);
       }
     }
 
     loop(3, n => n > 0, n => n - 1, console.log);
     loop(8, n => n > 0, n => n - 1, console.log);
-    
   </script>
 </body>
 

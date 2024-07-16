@@ -8,7 +8,30 @@
 <body>
   <p>Everything</p>
   <script>
-    
+    // Every function using a for loop
+    function every1(array, test) {
+      for(let element of array) {
+        // Checks if test(element) matches with array's elements
+        if (!test(element)) {
+          // Returns false if one element does not match
+          return false;
+        }
+        return true;
+      }
+    }
+
+    // Every method using the some method
+    function every2(array, test) {
+      return !array.some(element => !test(element));
+    }
+
+    console.log(every1([1, 3, 5], n => n < 10)); // true
+    console.log(every1([2, 4, 16], n => n < 10)); // false
+    console.log(every1([], n => n < 10)); // true
+
+    console.log(every2([1, 3, 5], n => n < 10));
+    console.log(every2([2, 4, 16], n => n < 10));
+    console.log(every2([], n => n < 10));
   </script>
 </body>
 
