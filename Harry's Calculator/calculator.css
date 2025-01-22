@@ -1,5 +1,6 @@
 .calculator-container {
   background-color: gray;
+  border: 4px solid black;
   border-radius: 10px;
   padding: 25px;
   width: 350px;
@@ -8,9 +9,9 @@
 button {
   background-color: rgb(74, 6, 182);
   border: 4px solid black;
-  border-radius: 2px;
+  border-radius: 10px;
   color: white;
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin: 2px;
   padding: 10px;
   text-align: center;
@@ -24,4 +25,21 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 5px;
+}
+
+#calculator-output {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2px 0 20px 0;
+}
+#calculator-output input {
+  text-align: right;
+  flex: 1;
+  font-size: 25px;
+  border: 4px solid black;
+  border-radius: 10px;
+}
+
+#res {
+  padding: 8px;
 }
