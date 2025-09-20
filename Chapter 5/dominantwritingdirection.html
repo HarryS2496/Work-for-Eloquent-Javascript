@@ -2,24 +2,58 @@
 <html>
   <head>
     <title>Dominant Writing Direction</title>
+    <script src="scripts.js"></script>
   </head>
 
   <body>
     <p>Dominant Writing Direction</p>
     <script>
+
+      // characterScript - Used to find one script out of the many in scripts.js
+
+      function characterScript(code) {
+        for (let script of SCRIPTS) {
+          if (script.ranges.some(([from, to]) => code >= from && code < to)) {
+            return script;
+          }
+        }
+        return null;
+      }
+
+      // countBy - Returns an array that names a group and the elements found in that group
+
+      function countBy(items, groupName) {
+        let counts = [];
+        for (let item of items) {
+          let name = groupName(item);
+          let known = counts.findIndex((c) => c.name == name);
+          if (known == -1) {
+            counts.push({ name, count: 1 });
+          } else {
+            counts[known].count++;
+          }
+        }
+        return counts;
+      }
+
+      // dominantDirection function (borrows some cues from textScripts)
+
       function dominantDirection(text) {
-        let scripts = countBy(text, (char) => {
-          let counted = characterScript(char.codePointAt(0));
+        // Counts characters by name, then assigns them a direction
+        // Filter drops "none" from the array
+        let counted = countBy(text, (char) => {
+          let script = characterScript(char.codePointAt(0));
           return script ? script.direction : "none";
         }).filter(({ name }) => name != "none");
 
+        // Default value if counted returns 0
         if (counted === 0) {
           return "ltr";
         }
 
-        return counted.reduce((a, b) => a.count > b.count ? a : b).name;
+        // Finds object with the largest count, then returns name before direction.
+        return counted.reduce((a, b) => (a.count > b.count ? a : b)).name;
       }
-
       console.log(dominantDirection("Hello!"));
       console.log(dominantDirection("Hey, مساء الخير"));
     </script>
