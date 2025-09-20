@@ -1,6 +1,0 @@
-Finish Chapter 4 of Eloquent Javascript
-Do all the exercises for Chapters 2 - 4
-Do the 10 exercises on Codeacademy sent by Mithun
-Upload all work to a Github repo and send a link to Mithun
-
-If all of this is done, work through Chapter 5 (Higher Order Functions)
